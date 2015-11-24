@@ -17,20 +17,23 @@
     "tsd": "0.6.4",
     "systemjs": "0.19.4",
     "require": "2.4.20",
-    "angular2": "2.0.0-alpha.44",
+    "angular2": "2.0.0-alpha.45",
     "rx": "3.1.2",
     "rx-lite": "3.1.2",
     "es6-promise": "3.0.2",
-    "tsd": "0.6.4",
     "reflect-metadata": "0.1.0",
-	"d3": "3.5.8"    
+    "d3": "3.5.8"
   },
   "devDependencies": {
+    "jspm": "^0.16.15",
     "typescript": "^1.6.2"
   },
   "jspm": {
     "dependencies": {},
     "devDependencies": {
+      "core-js": "npm:core-js@^1.1.4",
+      "traceur": "github:jmcriffey/bower-traceur@0.0.92",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.92",
       "typescript": "npm:typescript@^1.6.2"
     }
   }
