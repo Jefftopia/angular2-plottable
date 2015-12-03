@@ -6,9 +6,12 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.4/system.js"></script>
+<script src="jspm_packages/npm/zone.js@0.5.8/dist/zone.js" async></script>
+<script src="jspm_packages/npm/reflect-metadata@0.1.2/Reflect.js" async></script>
+<script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
-
+<script src="build.js"></script>
+<!--<script src="https://code.angularjs.org/2.0.0-alpha.45/angular2.dev.js"></script>-->
 <!-- <script src="node_modules/traceur/bin/traceur-runtime.js"></script> -->
 <!-- <script src="../../node_modules/systemjs/dist/system.js"></script> -->
 <!-- <script src="../../bower_components/svg-typewriter/svgtypewriter.js"></script> -->
@@ -47,31 +50,22 @@ path {
 }
 
 </style>
-<script>  
-// 	System.config({
-// 		defaultJSExtensions: true,
-// 		transpiler: "traceur",
-// 		map: {
-// 			"rx": "node_modules/rx/dist/rx.min"
-// 			,"angular2": "node_modules/angular2/es6/prod"
-//      		,"traceur": "node_modules/traceur/bin/traceur"
-// 		},
-// 		traceurOptions: {
-// 			annotations: true,
-// 			types: true,
-// 			memberVariables: true
-// 	    }
-// 	});     
-</script>
-
-<script src="https://code.angularjs.org/2.0.0-alpha.45/angular2.dev.js"></script>
 
 </head>
 
 <body id="page-top" class="index">
 
-	<script>System.import('index');</script>
-	<plottable-app></plottable-app>
+	<script>
+		System.import('src/main').then(function(result) {
+			
+			console.log(result);
+			
+			return result;
+			
+		});
+	</script>
+
+	<ap-demo></ap-demo>
 		
 </body>
 </html>
