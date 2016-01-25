@@ -2,12 +2,12 @@
     "compilerOptions": {
         "target": "es5",
         "module": "system",
-        "declaration": true,
         "removeComments": false,
         "emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"listFiles": true,
-        "sourceMap": true
+        "sourceMap": true,
+	"noImplicitAny": true
     },
     "exclude": [
         "node_modules",

@@ -2,9 +2,11 @@
   "name": "web-angular2-demo",
   "version": "0.1.0-SNAPSHOT",
   "description": "Project setup.",
-  "repository": {
-    "type": null,
-    "url": null
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
   },
   "dependencies": {
     "grunt-contrib-watch": "^0.6.0",
@@ -17,26 +19,31 @@
     "tsd": "0.6.4",
     "systemjs": "0.19.4",
     "require": "2.4.20",
-    "angular2": "2.0.0-alpha.45",
+    "angular2": "2.0.0-beta.1",
     "rx": "3.1.2",
     "rx-lite": "3.1.2",
     "es6-promise": "3.0.2",
-    "reflect-metadata": "0.1.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "^0.5.8",
     "d3": "3.5.8"
   },
   "devDependencies": {
+    "concurrent": "^0.3.2",
+    "concurrently": "^1.0.0",
     "jspm": "^0.16.15",
-    "typescript": "^1.6.2"
+    "typescript": "^1.7.5"
   },
   "jspm": {
     "dependencies": {
-      "angular2": "npm:angular2@^2.0.0-alpha.47",
+      "angular2": "npm:angular2@^2.0.0-beta.1",
       "es6-shim": "github:es-shims/es6-shim@^0.33.13",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "rxjs": "npm:rxjs@^5.0.0-beta.0",
       "zone.js": "npm:zone.js@^0.5.8"
     },
     "devDependencies": {
-      "typescript": "npm:typescript@^1.6.2"
+      "typescript": "npm:typescript@^1.7.5"
     }
   }
 }
