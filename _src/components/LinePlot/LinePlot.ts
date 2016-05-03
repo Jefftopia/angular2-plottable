@@ -59,3 +59,66 @@ export class LinePlot<X> {
     }
     
 }
+
+/*
+@Component({
+    selector: 'line-plot',
+    templateUrl: 'LinePlot.html'
+})    
+
+export class LinePlot<X> implements OnInit {
+
+    public xScale: Plottable.Scales.Category;
+    
+    public  yScale: Plottable.Scales.Linear;
+    
+    public plot: Plottable.Plots.Line<X>;
+    
+    public data: any[];
+    
+    public dataSet: any;
+    
+    protected elementRef: ElementRef;
+    
+    constructor(@Inject(ElementRef) elementRef: ElementRef, data: any) {
+        
+        console.log('new lineplot');
+        
+        this.elementRef = elementRef;
+        
+        this.data = data;
+        
+        console.log(elementRef);
+        
+    }
+    
+    protected ngOnInit(): void {
+        
+        this.xScale = new Plottable.Scales.Category();
+        
+        this.yScale = new Plottable.Scales.Linear();
+        
+        this.dataSet = new Plottable.Dataset(this.data)
+        
+        this.plot = new Plottable.Plots.Line();
+        
+        this.plot.addDataset(this.dataSet);
+        
+        this.plot.x(function(d) { return d.x; }, this.xScale);
+        
+        this.plot.y(function(d) { return d.y; }, this.yScale);
+                        
+        this.render();
+        
+    }
+    
+    public render(): void {
+        
+        console.log(this.elementRef.nativeElement);
+        
+        this.plot.renderTo(this.elementRef.nativeElement);
+        
+    }
+    
+}
+*/

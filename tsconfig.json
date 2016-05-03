@@ -2,17 +2,19 @@
     "compilerOptions": {
         "target": "es5",
         "module": "system",
+        "moduleResolution": "node",
         "removeComments": false,
         "emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"listFiles": true,
         "sourceMap": true,
-	"noImplicitAny": true
+        "noImplicitAny": false
     },
     "exclude": [
         "node_modules",
         "bower_components",
         "jspm_packages",
-        "target"
+        "target",
+        "_src"
     ]
 }

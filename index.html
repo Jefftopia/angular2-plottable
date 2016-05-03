@@ -6,14 +6,31 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/d3/d3.js"></script>
+    <script src="bower_components/svg-typewriter/svgtypewriter.js"></script>
+    <script src="bower_components/plottable/plottable.js"></script>
+    <script src="config.js"></script>
     <script>
-      System.config({packages: {app: {format: 'register', defaultExtension: 'js'}}});
-      System.import('app/boot')
+      System.import('src')
             .then(null, console.error.bind(console));
     </script>
+    <style>
+        demo {
+            display: block;
+        }
+    </style>
+    <link href="bower_components/plottable/plottable.css" type="text/css" rel="stylesheet" />
   </head>
 
   <body>
-    <my-app>Loading...</my-app>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+                <root class="panel panel-default">Loading...</root>                
+            </div>
+          </div>
+      </div>
+     
   </body>
 </html>

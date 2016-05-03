@@ -1,5 +1,5 @@
 {
-  "name": "web-angular2-demo",
+  "name": "ngPlottable",
   "version": "0.1.0-SNAPSHOT",
   "description": "Project setup.",
   "scripts": {
@@ -36,7 +36,7 @@
   },
   "jspm": {
     "dependencies": {
-      "angular2": "npm:angular2@^2.0.0-beta.1",
+      "angular2": "npm:angular2@^2.0.0-beta.8",
       "es6-shim": "github:es-shims/es6-shim@^0.33.13",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "rxjs": "npm:rxjs@^5.0.0-beta.0",

@@ -1,11 +1,18 @@
-import {Component} from 'angular2/core';
+/// <reference path="../bower_components/d3/d3.d.ts" />
+/// <reference path="../bower_components/svg-typewriter/svgtypewriter.d.ts" />
+/// <reference path="../bower_components/plottable/plottable.d.ts" />
+
+/// <reference path="unless.directive.ts" />
+/// <reference path="highlight.directive.ts" />
+
+import { Component, OnInit, ElementRef, Inject } from 'angular2/core';
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
-import { HeroDetailComponent, Hero } from './hero-detail.component';
+import { HeroDetailComponent } from './hero-detail.component';
 
 @Component({
     selector: 'my-app',
-    directives: [HeroDetailComponent],
+    directives: [HeroDetailComponent, Shapes.HighlightDirective, Shapes.UnlessDirective],
     providers: [HeroService],
     styles:[`
         .selected {
@@ -56,7 +63,7 @@ import { HeroDetailComponent, Hero } from './hero-detail.component';
         }
     `],
     template:`
-    <h1>{{title}}</h1>
+    <h1 *myUnless="true" [my-highlight]="" [defaultColor]="'violet'">{{title}}</h1>
     <my-hero-detail [hero]="selectedHero"></my-hero-detail>    
     <ul class="heroes">
         <li *ngFor="#hero of heroes" 
@@ -67,7 +74,7 @@ import { HeroDetailComponent, Hero } from './hero-detail.component';
     </ul>
     `
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     
   public title: string = 'Tour of Heroes';
   
@@ -80,14 +87,18 @@ export class AppComponent {
   constructor(heroService: HeroService) {
       
       this.heroService = heroService;
-        
+      
+  }
+  
+  ngOnInit() {
+      
       this.getHeroes();
       
   }
   
   public getHeroes(): void {
       
-      this.heroes = this.heroService.getHeroes();
+      this.heroService.getHeroes().then(heroes => this.heroes = heroes);
       
   }
   
